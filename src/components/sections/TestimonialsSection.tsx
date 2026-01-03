@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion-elements";
+import { FadeIn, StaggerContainer, StaggerItem } from "../ui/motion-elements";
 
 const testimonials = [
   {

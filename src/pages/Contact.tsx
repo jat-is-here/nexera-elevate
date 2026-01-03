@@ -1,10 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, ArrowRight, Check } from "lucide-react";
-import Layout from "@/components/layout/Layout";
-import { Button } from "@/components/ui/button";
-import { FadeIn } from "@/components/ui/motion-elements";
+import Layout from "../components/layout/Layout";
+import { Button } from "../components/ui/button";
+import { FadeIn } from "../components/ui/motion-elements";
 import { toast } from "sonner";
 
 const Contact = () => {
@@ -69,11 +69,11 @@ const Contact = () => {
 
       <Layout>
         {/* Hero */}
-        <section className="section-padding relative pt-32 overflow-hidden">
+        <section className="section-padding cursor-none relative pt-32 overflow-hidden">
           {/* Subtle background glow */}
-          <div className="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
+          <div className="pointer-events-none cursor-none absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
 
-          <div className="relative mx-auto max-w-7xl">
+          <div className="relative cursor-none mx-auto max-w-7xl">
             <FadeIn className="text-center">
               <span className="text-sm font-semibold uppercase tracking-wider text-primary">
                 Get in Touch
@@ -101,35 +101,35 @@ const Contact = () => {
         </section>
 
         {/* Contact Form & Info */}
-        <section className="section-padding pt-0">
-          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-5">
+        <section className="section-padding cursor-none pt-0">
+          <div className="mx-auto cursor-none grid max-w-7xl gap-12 lg:grid-cols-5">
             {/* Contact Info */}
-            <FadeIn className="lg:col-span-2">
-              <div className="space-y-8">
+            <FadeIn className="lg:col-span-2 cursor-none">
+              <div className="space-y-8 cursor-none">
                 <div>
-                  <h2 className="font-display text-2xl font-semibold">
+                  <h2 className="font-display cursor-none text-2xl font-semibold">
                     Contact Information
                   </h2>
-                  <p className="mt-2 text-muted-foreground">
+                  <p className="mt-2 cursor-none text-muted-foreground">
                     Reach out through any channel — we reply within 24 hours.
                   </p>
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-6 cursor-none">
                   {contactInfo.map((item) => (
                     <motion.a
                       whileHover={{ y: -4 }}
                       transition={{ type: "spring", stiffness: 300 }}
                       key={item.label}
                       href={item.href}
-                      className="group flex items-start gap-4 rounded-xl p-4 transition-colors hover:bg-muted/50"
+                      className="group flex cursor-none items-start gap-4 rounded-xl p-4 transition-colors hover:bg-muted/50"
                     >
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20">
-                        <item.icon className="h-5 w-5 text-primary" />
+                      <div className="flex cursor-none h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20">
+                        <item.icon className="h-5 w-5 cursor-none text-primary" />
                       </div>
                       <div>
-                        <div className="font-medium">{item.label}</div>
-                        <div className="text-sm text-muted-foreground">
+                        <div className="font-medium cursor-none">{item.label}</div>
+                        <div className="text-sm cursor-none text-muted-foreground">
                           {item.value}
                         </div>
                       </div>
@@ -140,12 +140,12 @@ const Contact = () => {
                 {/* Benefits */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="rounded-2xl bg-card p-6 shadow-sm"
+                  className="rounded-2xl cursor-none bg-card p-6 shadow-sm"
                 >
-                  <h3 className="font-display font-semibold">
+                  <h3 className="font-display cursor-none font-semibold">
                     Why Work With Us?
                   </h3>
-                  <ul className="mt-4 space-y-3">
+                  <ul className="mt-4 cursor-none space-y-3">
                     {[
                       "Free initial consultation",
                       "Transparent pricing",
@@ -154,9 +154,9 @@ const Contact = () => {
                     ].map((benefit) => (
                       <li
                         key={benefit}
-                        className="flex items-center gap-3 text-sm"
+                        className="flex cursor-none items-center gap-3 text-sm"
                       >
-                        <Check className="h-4 w-4 text-primary" />
+                        <Check className="h-4 cursor-none w-4 text-primary" />
                         {benefit}
                       </li>
                     ))}
@@ -166,27 +166,27 @@ const Contact = () => {
             </FadeIn>
 
             {/* Contact Form */}
-            <FadeIn delay={0.2} className="lg:col-span-3">
+            <FadeIn delay={0.2} className="lg:col-span-3 cursor-none">
               <motion.form
                 onSubmit={handleSubmit}
                 whileHover={{ boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }}
-                className="rounded-2xl border border-border bg-card/80 backdrop-blur-sm p-8"
+                className="rounded-2xl cursor-none border border-border bg-card/80 backdrop-blur-sm p-8"
               >
-                <h2 className="font-display text-2xl font-semibold">
+                <h2 className="font cursor-none-display text-2xl font-semibold">
                   Send Us a Message
                 </h2>
-                <p className="mt-2 text-muted-foreground">
+                <p className="mt-2 cursor-none text-muted-foreground">
                   Fill out the form and we’ll contact you shortly.
                 </p>
 
-                <div className="mt-8 grid gap-6 md:grid-cols-2">
+                <div className="mt-8 cursor-none grid gap-6 md:grid-cols-2">
                   {[
                     ["Name *", "text", "name", "John Doe"],
                     ["Email *", "email", "email", "john@company.com"],
                     ["Company", "text", "company", "Your Company"],
                   ].map(([label, type, key, placeholder]) => (
                     <div key={key}>
-                      <label className="text-sm font-medium">{label}</label>
+                      <label className="text-sm cursor-none  font-medium">{label}</label>
                       <input
                         type={type}
                         required={label.includes("*")}
@@ -197,14 +197,14 @@ const Contact = () => {
                             [key]: e.target.value,
                           })
                         }
-                        className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 outline-none transition focus:border-primary"
+                        className="mt-2 cursor-none w-full rounded-lg border border-border bg-background px-4 py-3 outline-none transition focus:border-primary"
                         placeholder={placeholder}
                       />
                     </div>
                   ))}
 
                   <div>
-                    <label className="text-sm font-medium">
+                    <label className="text-sm cursor-none font-medium">
                       Service Interested In
                     </label>
                     <select
@@ -212,9 +212,9 @@ const Contact = () => {
                       onChange={(e) =>
                         setFormState({ ...formState, service: e.target.value })
                       }
-                      className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 outline-none focus:border-primary"
+                      className="mt-2 w-full cursor-none rounded-lg border border-border bg-background px-4 py-3 outline-none focus:border-primary"
                     >
-                      <option value="">Select a service</option>
+                      <option className="cursor-none" value="">Select a service</option>
                       {services.map((service) => (
                         <option key={service}>{service}</option>
                       ))}
@@ -222,7 +222,7 @@ const Contact = () => {
                   </div>
 
                   <div className="md:col-span-2">
-                    <label className="text-sm font-medium">Message *</label>
+                    <label className="text-sm cursor-none font-medium">Message *</label>
                     <textarea
                       required
                       rows={5}
@@ -230,7 +230,7 @@ const Contact = () => {
                       onChange={(e) =>
                         setFormState({ ...formState, message: e.target.value })
                       }
-                      className="mt-2 w-full resize-none rounded-lg border border-border bg-background px-4 py-3 outline-none focus:border-primary"
+                      className="mt-2 cursor-none w-full resize-none rounded-lg border border-border bg-background px-4 py-3 outline-none focus:border-primary"
                       placeholder="Tell us about your project..."
                     />
                   </div>
@@ -240,7 +240,7 @@ const Contact = () => {
                   type="submit"
                   disabled={isSubmitting}
                   size="lg"
-                  className="btn-primary mt-8 w-full rounded-full md:w-auto"
+                  className="btn-primary cursor-none mt-8 w-full rounded-full md:w-auto"
                 >
                   {isSubmitting ? (
                     <motion.span
@@ -248,13 +248,13 @@ const Contact = () => {
                       transition={{ repeat: Infinity, duration: 1 }}
                       className="flex items-center gap-2"
                     >
-                      <Send className="h-5 w-5" />
+                      <Send className="h-5 cursor-none w-5" />
                       Sending...
                     </motion.span>
                   ) : (
                     <span className="flex items-center gap-2">
                       Send Message
-                      <ArrowRight className="h-5 w-5" />
+                      <ArrowRight className="h-5 cursor-none w-5" />
                     </span>
                   )}
                 </Button>

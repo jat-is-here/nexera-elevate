@@ -6,6 +6,7 @@ import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion-elements";
 import { GlowCard } from "@/components/ui/glow-card";
+import TransitionOverlay from "../components/ui/TransitionOverlay";
 
 const values = [
   {
@@ -75,10 +76,10 @@ const About = () => {
 
       <Layout>
         {/* Hero */}
-        <section className="section-padding relative min-h-[60vh] pt-32">
+        <section className="cursor-none section-padding relative min-h-[60vh] pt-32">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
 
-          <div className="relative mx-auto max-w-7xl">
+          <div className="cursor-none relative mx-auto max-w-7xl">
             <FadeIn className="max-w-3xl">
               <span className="text-sm font-semibold uppercase tracking-wider text-primary">
                 About Us
@@ -99,7 +100,7 @@ const About = () => {
         </section>
 
         {/* Story */}
-        <section className="section-padding bg-card">
+        <section className="cursor-none section-padding bg-card">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:gap-20">
             <FadeIn>
               <div className="relative">
@@ -107,7 +108,7 @@ const About = () => {
                   <img
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=800&fit=crop"
                     alt="Nexera team collaborating"
-                    className="h-full w-full object-cover"
+                    className="cursor-none h-full w-full object-cover"
                     loading="lazy"
                   />
                 </div>
@@ -118,7 +119,7 @@ const About = () => {
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.2} className="flex flex-col justify-center">
+            <FadeIn delay={0.2} className="flex cursor-none flex-col justify-center">
               <h2 className="heading-lg">Our Story</h2>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
                 Nexera was born from a simple belief: that businesses deserve
@@ -149,7 +150,7 @@ const About = () => {
         </section>
 
         {/* Values – GLOW CARDS */}
-        <section className="section-padding">
+        <section className="section-padding cursor-none">
           <div className="mx-auto max-w-7xl">
             <FadeIn className="text-center">
               <h2 className="heading-lg">
@@ -161,12 +162,12 @@ const About = () => {
               </p>
             </FadeIn>
 
-            <StaggerContainer className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <StaggerContainer className="mt-16 cursor-none grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {values.map((value) => (
                 <StaggerItem key={value.title}>
-                  <GlowCard className="text-center h-full">
+                  <GlowCard className="text-center cursor-none h-full">
                     <div className="mx-auto mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20">
-                      <value.icon className="h-7 w-7 text-primary" />
+                      <value.icon className="h-7 w-7 cursor-none text-primary" />
                     </div>
                     <h3 className="font-display text-xl font-semibold">
                       {value.title}
@@ -182,7 +183,7 @@ const About = () => {
         </section>
 
         {/* Team */}
-        <section className="section-padding bg-card">
+        <section className="section-padding bg-card cursor-none">
           <div className="mx-auto max-w-7xl">
             <FadeIn className="text-center">
               <h2 className="heading-lg">
@@ -193,7 +194,7 @@ const About = () => {
               </p>
             </FadeIn>
 
-            <StaggerContainer className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <StaggerContainer className="mt-16 cursor-none grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               {team.map((member) => (
                 <StaggerItem key={member.name}>
                   <motion.div whileHover={{ y: -5 }} className="group text-center">
@@ -201,7 +202,7 @@ const About = () => {
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="aspect-square cursor-none w-full object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
@@ -218,7 +219,7 @@ const About = () => {
         </section>
 
         {/* CTA */}
-        <section className="section-padding">
+        <section className="section-padding cursor-none">
           <div className="mx-auto max-w-4xl text-center">
             <FadeIn>
               <h2 className="heading-lg">
@@ -228,8 +229,8 @@ const About = () => {
               <p className="body-lg mt-4">
                 Let's discuss how we can help transform your brand.
               </p>
-              <Button asChild size="lg" className="btn-primary mt-8 rounded-full">
-                <Link to="/contact" className="flex items-center gap-2">
+              <Button asChild size="lg" className="btn-primary cursor-none mt-8 rounded-full">
+                <Link to="/contact" className="flex cursor-none items-center gap-2">
                   Get in Touch
                   <ArrowRight className="h-5 w-5" />
                 </Link>

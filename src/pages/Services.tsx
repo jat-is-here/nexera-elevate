@@ -98,10 +98,10 @@ const Services = () => {
 
       <Layout>
         {/* Hero */}
-        <section className="section-padding relative min-h-[50vh] pt-32">
+        <section className="section-padding cursor-none relative min-h-[50vh] pt-32">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
 
-          <div className="relative mx-auto max-w-7xl text-center">
+          <div className="relative cursor-none mx-auto max-w-7xl text-center">
             <FadeIn>
               <span className="text-sm font-semibold uppercase tracking-wider text-primary">
                 Our Services
@@ -119,8 +119,8 @@ const Services = () => {
         </section>
 
         {/* Services Grid – GLOW CARDS */}
-        <section className="section-padding">
-          <StaggerContainer className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2">
+        <section className="section-padding cursor-none">
+          <StaggerContainer className="mx-auto cursor-none grid max-w-7xl gap-8 md:grid-cols-2">
             {services.map((service) => (
               <StaggerItem key={service.title}>
                 <motion.div whileHover={{ y: -5 }} className="h-full">
@@ -128,7 +128,7 @@ const Services = () => {
                     <div className="flex h-full flex-col">
                       {/* Icon */}
                       <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20">
-                        <service.icon className="h-7 w-7 text-primary" />
+                        <service.icon className="h-7 cursor-none w-7 text-primary" />
                       </div>
 
                       {/* Content */}
@@ -140,11 +140,11 @@ const Services = () => {
                       </p>
 
                       {/* Features */}
-                      <ul className="mt-6 grid grid-cols-2 gap-2">
+                      <ul className="mt-6 cursor-none grid grid-cols-2 gap-2">
                         {service.features.map((feature) => (
                           <li
                             key={feature}
-                            className="flex items-center gap-2 text-sm text-muted-foreground"
+                            className="flex cursor-none items-center gap-2 text-sm text-muted-foreground"
                           >
                             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                             {feature}
@@ -155,10 +155,10 @@ const Services = () => {
                       {/* CTA */}
                       <Link
                         to={service.path}
-                        className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-primary"
+                        className="mt-6 cursor-none inline-flex items-center gap-2 text-sm font-medium text-primary"
                       >
                         Learn More
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        <ArrowRight className="h-4 cursor-none w-4 transition-transform group-hover:translate-x-1" />
                       </Link>
                     </div>
                   </GlowCard>
@@ -169,7 +169,7 @@ const Services = () => {
         </section>
 
         {/* CTA */}
-        <section className="section-padding bg-card">
+        <section className="section-padding cursor-none bg-card">
           <div className="mx-auto max-w-4xl text-center">
             <FadeIn>
               <h2 className="heading-lg">
@@ -179,8 +179,8 @@ const Services = () => {
                 Let's discuss your goals and create a custom strategy that fits
                 your business needs.
               </p>
-              <Button asChild size="lg" className="btn-primary mt-8 rounded-full">
-                <Link to="/contact" className="flex items-center gap-2">
+              <Button asChild size="lg" className="btn-primary cursor-none mt-8 rounded-full">
+                <Link to="/contact" className="flex cursor-none items-center gap-2">
                   Get a Free Consultation
                   <ArrowRight className="h-5 w-5" />
                 </Link>

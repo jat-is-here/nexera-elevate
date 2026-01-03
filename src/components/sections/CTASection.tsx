@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { FadeIn } from "@/components/ui/motion-elements";
+import { Button } from "../ui/button";
+import { FadeIn } from "../ui/motion-elements";
 
 const CTASection = () => {
   return (
@@ -29,52 +29,53 @@ const CTASection = () => {
       />
 
       <div className="relative mx-auto max-w-4xl text-center">
-        <FadeIn>
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary"
-          >
-            <Sparkles className="h-4 w-4" />
-            Ready to Transform Your Brand?
-          </motion.div>
-        </FadeIn>
+        <div className="mx-auto w-fit max-w-[90vw] bg-white/70 backdrop-blur-md rounded-tl-[40px] rounded-tr-md rounded-br-[8px] rounded-bl-xl px-6 py-6 text-center shadow-lg">
+          <FadeIn>
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 rounded-full border border-primary/30 px-4 py-2 text-sm font-medium text-primary"
+            >
+              <Sparkles className="h-4 w-4" />
+              Ready to Transform Your Brand?
+            </motion.div>
+          </FadeIn>
 
-        <FadeIn delay={0.1}>
-          <h2 className="heading-lg mt-8">
-            Let's Create Something{" "}
-            <span className="gradient-text">Extraordinary</span> Together
-          </h2>
-        </FadeIn>
+          <FadeIn delay={0.1}>
+            <h2 className="heading-lg mt-8">
+              Let's Create Something <span className="gradient-text">Extraordinary</span> Together
+            </h2>
+          </FadeIn>
 
-        <FadeIn delay={0.2}>
-          <p className="body-lg mx-auto mt-6 max-w-2xl">
-            Whether you're launching a new brand or scaling an existing one, we're
-            here to help you achieve your goals. Get in touch for a free
-            consultation.
-          </p>
-        </FadeIn>
+          <FadeIn delay={0.2}>
+            <p className="body-lg mx-auto mt-6 max-w-2xl text-center">
+              Whether you're launching a new brand or scaling an existing one, we're
+              here to help you achieve your goals. Get in touch for a free
+              consultation.
+            </p>
+          </FadeIn>
 
-        <FadeIn delay={0.3}>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="btn-primary rounded-full text-base">
-              <Link to="/contact" className="flex items-center gap-2">
-                Schedule a Call
-                <ArrowRight className="h-5 w-5" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="btn-outline rounded-full text-base">
-              <Link to="/services">Explore Our Services</Link>
-            </Button>
-          </div>
-        </FadeIn>
+          <FadeIn delay={0.3}>
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button asChild size="lg" className="btn-primary cursor-none rounded-full text-base">
+                <Link to="/contact" className="flex cursor-none items-center gap-2">
+                  Schedule a Call
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="btn-outline cursor-none rounded-full text-base">
+                <Link to="/services" className="cursor-none">Explore Our Services</Link>
+              </Button>
+            </div>
+          </FadeIn>
 
-        <FadeIn delay={0.4}>
-          <p className="mt-8 text-sm text-muted-foreground">
-            No commitment required. Let's start with a conversation.
-          </p>
-        </FadeIn>
+          <FadeIn delay={0.4}>
+            <p className="mt-8 text-sm text-muted-foreground">
+              No commitment required. Let's start with a conversation.
+            </p>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

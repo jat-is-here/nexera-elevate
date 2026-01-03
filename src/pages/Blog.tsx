@@ -76,7 +76,7 @@ const Blog = () => {
 
       <Layout>
         {/* Hero */}
-        <section className="section-padding relative pt-32">
+        <section className="section-padding cursor-none relative pt-32">
           <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
           
           <div className="relative mx-auto max-w-7xl text-center">
@@ -96,9 +96,9 @@ const Blog = () => {
         </section>
 
         {/* Featured Post */}
-        <section className="section-padding pt-0">
+        <section className="section-padding cursor-none pt-0">
           <FadeIn className="mx-auto max-w-7xl">
-            <Link to={`/blog/${blogPosts[0].slug}`} className="group block">
+            <Link to={`/blog/${blogPosts[0].slug}`} className="group cursor-none block">
               <div className="grid gap-8 overflow-hidden rounded-2xl border border-border bg-card lg:grid-cols-2">
                 <div className="relative aspect-video overflow-hidden lg:aspect-auto">
                   <img
@@ -120,17 +120,17 @@ const Blog = () => {
                   </p>
                   <div className="mt-6 flex items-center gap-6 text-sm text-muted-foreground">
                     <span className="flex items-center gap-2">
-                      <User className="h-4 w-4" />
+                      <User className="h-4 cursor-none w-4" />
                       {blogPosts[0].author}
                     </span>
                     <span className="flex items-center gap-2">
-                      <Clock className="h-4 w-4" />
+                      <Clock className="h-4 cursor-none w-4" />
                       {blogPosts[0].readTime}
                     </span>
                   </div>
                   <span className="mt-6 inline-flex items-center gap-2 font-medium text-primary">
                     Read Article
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="h-4 cursor-none w-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </div>
               </div>
@@ -139,11 +139,11 @@ const Blog = () => {
         </section>
 
         {/* Blog Grid */}
-        <section className="section-padding pt-0">
+        <section className="section-padding cursor-none pt-0">
           <StaggerContainer className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 lg:grid-cols-3">
             {blogPosts.slice(1).map((post) => (
               <StaggerItem key={post.slug}>
-                <Link to={`/blog/${post.slug}`} className="group block h-full">
+                <Link to={`/blog/${post.slug}`} className="group cursor-none block h-full">
                   <motion.article
                     whileHover={{ y: -5 }}
                     className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card"
@@ -152,7 +152,7 @@ const Blog = () => {
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="h-full cursor-none w-full object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                       />
                       <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-sm font-medium backdrop-blur">
@@ -168,11 +168,11 @@ const Blog = () => {
                       </p>
                       <div className="mt-6 flex items-center justify-between text-sm text-muted-foreground">
                         <span className="flex items-center gap-2">
-                          <User className="h-4 w-4" />
+                          <User className="h-4 cursor-none w-4" />
                           {post.author}
                         </span>
                         <span className="flex items-center gap-2">
-                          <Clock className="h-4 w-4" />
+                          <Clock className="h-4 cursor-none w-4" />
                           {post.readTime}
                         </span>
                       </div>
@@ -185,7 +185,7 @@ const Blog = () => {
         </section>
 
         {/* Newsletter CTA */}
-        <section className="section-padding bg-card">
+        <section className="section-padding cursor-none bg-card">
           <FadeIn className="mx-auto max-w-2xl text-center">
             <h2 className="heading-lg">
               Stay <span className="gradient-text">Updated</span>
@@ -198,11 +198,11 @@ const Blog = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 rounded-full border border-border bg-background px-6 py-4 outline-none transition-colors focus:border-primary"
+                className="flex-1 cursor-none rounded-full border border-border bg-background px-6 py-4 outline-none transition-colors focus:border-primary"
               />
               <button
                 type="submit"
-                className="btn-primary rounded-full px-8 py-4"
+                className="btn-primary cursor-none rounded-full px-8 py-4"
               >
                 Subscribe
               </button>

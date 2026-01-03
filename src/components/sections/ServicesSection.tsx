@@ -1,34 +1,42 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Search, Share2, Palette, Code } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion-elements";
+import {
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+} from "../ui/motion-elements";
 
 const services = [
   {
     icon: Search,
     title: "SEO Optimization",
-    description: "Dominate search rankings with data-driven SEO strategies that deliver measurable organic growth.",
+    description:
+      "Dominate search rankings with data-driven SEO strategies that deliver measurable organic growth.",
     path: "/services/seo",
     color: "from-cyan-500 to-blue-500",
   },
   {
     icon: Share2,
     title: "Social Media Marketing",
-    description: "Build engaged communities and drive conversions through strategic social media campaigns.",
+    description:
+      "Build engaged communities and drive conversions through strategic social media campaigns.",
     path: "/services/social-media-marketing",
     color: "from-purple-500 to-pink-500",
   },
   {
     icon: Palette,
     title: "Branding & Identity",
-    description: "Craft memorable brand identities that resonate with your audience and stand out in the market.",
+    description:
+      "Craft memorable brand identities that resonate with your audience and stand out in the market.",
     path: "/services/branding",
     color: "from-orange-500 to-red-500",
   },
   {
     icon: Code,
     title: "Web Development",
-    description: "Build lightning-fast, conversion-optimized websites that deliver exceptional user experiences.",
+    description:
+      "Build lightning-fast, conversion-optimized websites that deliver exceptional user experiences.",
     path: "/services/web-development",
     color: "from-green-500 to-emerald-500",
   },
@@ -42,27 +50,29 @@ const ServicesSection = () => {
       <div className="absolute bottom-0 right-1/4 h-96 w-96 rounded-full bg-secondary/5 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl">
-        <FadeIn className="text-center">
-          <span className="text-sm font-semibold uppercase tracking-wider text-primary">
-            Our Services
-          </span>
-          <h2 className="heading-lg mt-4">
-            Everything You Need to{" "}
-            <span className="gradient-text">Scale Your Brand</span>
-          </h2>
-          <p className="body-lg mx-auto mt-4 max-w-2xl">
-            From strategy to execution, we provide end-to-end digital marketing
-            solutions that transform your business.
-          </p>
-        </FadeIn>
+        <div className="max-w-2xl mx-auto text-center bg-white/70 backdrop-blur-md rounded-xl px-6 py-4">
+          <FadeIn className="text-center">
+            <span className="text-sm font-semibold uppercase tracking-wider text-primary">
+              Our Services
+            </span>
+            <h2 className="heading-lg mt-4">
+              Everything You Need to{" "}
+              <span className="gradient-text">Scale Your Brand</span>
+            </h2>
+            <p className="body-lg mx-auto mt-4 max-w-2xl">
+              From strategy to execution, we provide end-to-end digital
+              marketing solutions that transform your business.
+            </p>
+          </FadeIn>
+        </div>
 
         <StaggerContainer className="mt-16 grid gap-6 md:grid-cols-2">
           {services.map((service) => (
             <StaggerItem key={service.path}>
-              <Link to={service.path} className="group block">
+              <Link to={service.path} className="group cursor-none block">
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className="card-glass relative h-full overflow-hidden"
+                  className="card-glass relative h-full overflow-hidden bg-white/60 border border-gray-200/30 rounded-2xl shadow-md p-6"
                 >
                   {/* Icon */}
                   <div
@@ -89,16 +99,17 @@ const ServicesSection = () => {
             </StaggerItem>
           ))}
         </StaggerContainer>
-
-        <FadeIn delay={0.4} className="mt-12 text-center">
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-2 text-primary transition-colors hover:text-primary/80"
-          >
-            View All Services
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
-        </FadeIn>
+        <div className="bg-white/70 backdrop-blur-md rounded-xl max-w-fit mx-auto px-2 max-h-fit py-2 mt-12">
+          <FadeIn delay={0.4} className="text-center">
+            <Link
+              to="/services"
+              className="inline-flex cursor-none items-center gap-2 text-primary transition-colors hover:text-primary/80"
+            >
+              View All Services
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

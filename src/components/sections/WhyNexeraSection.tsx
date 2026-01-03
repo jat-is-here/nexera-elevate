@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Zap, Target, TrendingUp, Users, Shield, Clock } from "lucide-react";
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/motion-elements";
+import { ContainerScroll } from "../ui/container-scroll-animation";
+import { FadeIn, StaggerContainer, StaggerItem } from "../ui/motion-elements";
 
 const features = [
   {

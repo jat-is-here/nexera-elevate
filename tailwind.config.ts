@@ -59,6 +59,7 @@ export default {
   			}
   		},
   		fontFamily: {
+			Pixelo: ["Pixelo", "system-ui", "sans-serif"],
   			display: [
   				'Space Grotesk',
   				'sans-serif'
